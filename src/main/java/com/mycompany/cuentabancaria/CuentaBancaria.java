@@ -77,7 +77,7 @@ public class CuentaBancaria {
             // Mostrar saldo actual
             System.out.println("Saldo actual: " + cuenta.getSaldo());
         }
-        // Mostrar Mensaje antes de cerrar
+        // Mostrar Mensaje antes de cerrar *
         System.out.println("Gracias por usar el sistema bancario.");
         scanner.close();
     }
