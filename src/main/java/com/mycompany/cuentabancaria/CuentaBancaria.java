@@ -24,6 +24,16 @@ public class CuentaBancaria {
         return saldo;
     }
 
+    // Setter para modificar el saldo
+    public void setSaldo(double nuevoSaldo) {
+        if (nuevoSaldo >= 0) {
+            this.saldo = nuevoSaldo;
+            System.out.println("Saldo actualizado a: " + nuevoSaldo);
+        } else {
+            System.out.println("El saldo no puede ser negativo.");
+        }
+    }
+
     // Método para depositar dinero
     public void depositar(double cantidad) {
         if (cantidad > 0) {
@@ -53,7 +63,7 @@ public class CuentaBancaria {
         boolean continuar = true;
 
         while (continuar) {
-            System.out.println("¿Desea (1) Depositar o (2) Retirar dinero? (0 para salir)");
+            System.out.println("¿Desea (1) Depositar, (2) Retirar dinero o (3) Establecer saldo? (0 para salir)");
             int opcion = scanner.nextInt();
 
             switch (opcion) {
@@ -66,6 +76,11 @@ public class CuentaBancaria {
                     System.out.print("Ingrese la cantidad a retirar: ");
                     double cantidadRetiro = scanner.nextDouble();
                     cuenta.retirar(cantidadRetiro);
+                    break;
+                case 3:
+                    System.out.print("Ingrese el nuevo saldo: ");
+                    double nuevoSaldo = scanner.nextDouble();
+                    cuenta.setSaldo(nuevoSaldo);
                     break;
                 case 0:
                     continuar = false;
